@@ -11,22 +11,22 @@ public class GameModeChooser {
     public static TicTacToeGame getGameWithMode(GameMode mode) {
         switch (mode) {
             case MULTI_PLAYER_MODE: {
-                return new MultiPlayerGame();
+                return GameModeChooser.getMultiPlayerGame();
             }
             case SINGLE_PLAYER_MODE: {
-                return new SinglePlayerGame();
+                return GameModeChooser.getSinglePlayerGame();
             }
             default:
-                return new SinglePlayerGame();
+                return GameModeChooser.getSinglePlayerGame();
         }
     }
 
     public static TicTacToeGame getSinglePlayerGame() {
-        return new SinglePlayerGame();
+        return SinglePlayerGame.createSinglePlayer();
     }
 
     public static TicTacToeGame getMultiPlayerGame() {
-        return new MultiPlayerGame();
+        return MultiPlayerGame.createMultiPlayer();
     }
 
 }

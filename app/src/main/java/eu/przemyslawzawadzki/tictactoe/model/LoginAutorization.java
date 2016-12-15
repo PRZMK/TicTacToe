@@ -10,6 +10,7 @@ import java.util.Map;
  */
 
 public class LoginAutorization {
+
     private static Map<String, String> CREDENTIALS = new HashMap<>();
     static {
         CREDENTIALS.put("foo@example.com","hello");

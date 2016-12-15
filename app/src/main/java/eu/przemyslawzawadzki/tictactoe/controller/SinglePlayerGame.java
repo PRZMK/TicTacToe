@@ -8,10 +8,26 @@ import java.util.Random;
 
 public class SinglePlayerGame extends TicTacToeGame {
     private Random mRand;
-    public SinglePlayerGame() {
+
+    private static volatile SinglePlayerGame instance;
+
+    private SinglePlayerGame() {
         super();
         mRand = new Random();
     }
+
+    public static SinglePlayerGame createSinglePlayer(){
+        if (instance == null){
+            synchronized (SinglePlayerGame.class){
+                if(instance == null){
+                    instance = new SinglePlayerGame();
+                }
+            }
+        }
+        return instance;
+    }
+
+
 
     @Override
     public int getOpponentMove() {

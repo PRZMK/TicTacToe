@@ -44,8 +44,6 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game);
 
-
-
         mInfoTextView = (TextView) findViewById(R.id.information);
         mHumanCount = (TextView) findViewById(R.id.user_score);
         mTieCount = (TextView) findViewById(R.id.tiesCount);
